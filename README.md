@@ -20,7 +20,7 @@ A virtual altar for the Great God Cthulhu !
     crate-type = ["cdylib", "rlib"]
 - Compile to web : wasm-pack build --target web
     - This will result in a pkg folder with a wasm file
-
+- Comment out or remove .gitignore in pkg directory, so the pkg will get loaded to github (rust_wasm_functions/pkg/.gitignore)
 
 ## Maintenance
 TODO
