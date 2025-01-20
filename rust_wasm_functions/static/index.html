@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust WASM Example</title>
+</head>
+<body>
+    <h1>Rust WebAssembly Example</h1>
+    <p id="greeting"></p>
+
+
+    <script type="module">
+        import * as wasm from '../pkg/rust_wasm_functions.js';
+
+        async function run() {
+            // Wait for the WASM module to be initialized
+            await wasm.default();
+
+            // Use the functions from Rust
+            // document.getElementById('greeting').textContent = wasm.greet('World');
+            // document.getElementById('greeting').textContent = wasm.get_rlyeh_location();
+            document.getElementById('greeting').textContent = wasm.calculate_time_to_awaken();
+       }
+
+        run();
+    </script>
+</body>
+</html>

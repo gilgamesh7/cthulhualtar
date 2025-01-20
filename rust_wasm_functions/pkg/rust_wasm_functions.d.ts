@@ -1,13 +1,19 @@
 /* tslint:disable */
 /* eslint-disable */
+export function greet(name: string): string;
 export function get_rlyeh_location(): string;
+export function calculate_time_to_awaken(): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
+  readonly greet: (a: number, b: number) => [number, number];
   readonly get_rlyeh_location: () => [number, number];
+  readonly calculate_time_to_awaken: () => [number, number];
   readonly __wbindgen_export_0: WebAssembly.Table;
+  readonly __wbindgen_malloc: (a: number, b: number) => number;
+  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __wbindgen_start: () => void;
 }
