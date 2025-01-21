@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import init, { get_rlyeh_location, calculate_time_to_awaken } from 'rust_wasm_functions';
 
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
-  const [timerId, setTimerId] = useState(null); // Store the current timeout ID
+  const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
 
 
   useEffect(() => {
@@ -29,11 +29,9 @@ function Altar() {
         const nextInterval = Math.floor(Math.random() * 6 + 1) * 1000; // Random time between 1 and 6 seconds
 
         // Schedule the next update
-        const id = setTimeout(() => {
+        timerRef.current = setTimeout(() => {
           scheduleNextUpdate();
         }, nextInterval);
-
-        setTimerId(id);
 
       };
 
@@ -46,8 +44,8 @@ function Altar() {
     // Cleanup on component unmount
     return () => {
       active = false;
-      if (timerId) {
-        clearTimeout(timerId);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
       }
     };
   }, []); // Dependency array is empty to ensure the effect runs once
