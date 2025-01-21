@@ -28,6 +28,8 @@ A virtual altar for the Great God Cthulhu !
 - Comment out or remove .gitignore in pkg directory, so the pkg will get loaded to github (rust_wasm_functions/pkg/.gitignore)
 ### Test WASM using JS
 - To run your own web server to avoid CORS errors : python3 -m http.serve
+- Open http://localhost:8000/
+- Navigate to index.html in cthulhualtar/public
 ## Maintenance
 TODO
 

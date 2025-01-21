@@ -4,19 +4,53 @@ import init, { get_rlyeh_location, calculate_time_to_awaken } from 'rust_wasm_fu
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
+  const [timerId, setTimerId] = useState(null); // Store the current timeout ID
+
 
   useEffect(() => {
+
+    let active = true; // Track if the component is still mounted
+
     const loadWASM = async () => {
       await init();
 
       const rlyeh_location = get_rlyeh_location();
       setRlyehLocation(rlyeh_location);
 
-      const awakeningTime = calculate_time_to_awaken();
-      setAwakeningTime(awakeningTime);
+      const scheduleNextUpdate = () => {
+        if (!active) {
+          return;
+        }
+
+        const awakeningTime = calculate_time_to_awaken();
+        setAwakeningTime(awakeningTime);
+
+        // Generate a random interval between 1 and 6 seconds
+        const nextInterval = Math.floor(Math.random() * 6 + 1) * 1000; // Random time between 1 and 6 seconds
+
+        // Schedule the next update
+        const id = setTimeout(() => {
+          scheduleNextUpdate();
+        }, nextInterval);
+
+        setTimerId(id);
+
+      };
+
+      // Start the first update
+      scheduleNextUpdate();
     };
+
     loadWASM();
-  }, []);
+
+    // Cleanup on component unmount
+    return () => {
+      active = false;
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, []); // Dependency array is empty to ensure the effect runs once
 
 
   return (
