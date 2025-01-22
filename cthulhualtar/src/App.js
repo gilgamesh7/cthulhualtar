@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import init, { get_rlyeh_location, calculate_time_to_awaken } from 'rust_wasm_functions';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import cthulhuImage1 from './images/cthulhu.jpeg';
+import cthulhuImage2 from './images/cthulhu-2.jpg';
+import cthulhuImage3 from './images/cthulhu-3.jpg';
+
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
@@ -52,10 +58,65 @@ function Altar() {
 
 
   return (
-    <div className="altar">
+    <div className="altar" class="container-sm">
       <h1>{rlyeh_location}</h1>
       <h2>{awakeningTime}</h2>
+
+      <div className="container mt-5">
+        <h1 className="text-center mb-4">Mythos Carousel</h1>
+        <div
+          id="myCarousel"
+          className="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="2000" // Set interval to 2 seconds (2000ms)
+        >
+          {/* Indicators */}
+          <ol className="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" className="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          </ol>
+
+          {/* Carousel Items */}
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src={cthulhuImage1} className="d-block w-100" alt="Cthulhu" />
+              <div className="carousel-caption">
+                <h5>Cthulhu</h5>
+                <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={cthulhuImage2} className="d-block w-100" alt="Dagon" />
+              <div className="carousel-caption">
+                <h5>Cthulhu</h5>
+                <p>In his house at R'lyeh, dead Cthulhu lies dreaming</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={cthulhuImage3} className="d-block w-100" alt="Nyarlathotep" />
+              <div className="carousel-caption">
+                <h5>Cthulhu</h5>
+                <p>That is not dead which can eternal lie, And with strange aeons even death may die.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <a className="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+      <p className="mt-3"></p>
+      <p className="mt-1"></p>
     </div>
+  
   );
 }
 

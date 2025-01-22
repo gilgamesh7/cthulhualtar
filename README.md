@@ -1,11 +1,18 @@
 # cthulhualtar
 A virtual altar for the Great God Cthulhu !
 
+# Access
+1. Local : http://localhost:3001
+1. Cloud : https://brave-rock-040a7c310.4.azurestaticapps.net
+
 # Installation
 ## Development
 ### React frontend
 - npm install -g yarn
 - yarn create react-app cthulhualtar
+- Install dependencies :
+    - yarn add bootstrap
+    - yarn add bootstrap @popperjs/core
 - After the Rust WASM pkg is created, integrate into React using
   - cd cthulhualtar
   - yarn add file:../rust_wasm_functions/pkg
