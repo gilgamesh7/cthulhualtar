@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import init, { get_rlyeh_location, calculate_time_to_awaken } from 'rust_wasm_functions';
 
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import cthulhuImage1 from './images/cthulhu.jpeg';
@@ -11,7 +12,7 @@ function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
   const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
-
+  const carouselRef = useRef(null); // Ref for carousel element
 
   useEffect(() => {
 
@@ -56,6 +57,16 @@ function Altar() {
     };
   }, []); // Dependency array is empty to ensure the effect runs once
 
+  useEffect(() => {
+    // Initialize the carousel when the component mounts
+    if (carouselRef.current) {
+      const bootstrap = require('bootstrap'); // Import Bootstrap dynamically
+      new bootstrap.Carousel(carouselRef.current, {
+        interval: 2000, // Set the interval to 2 seconds
+        ride: 'carousel', // Automatically start the carousel
+      });
+    }
+  }, []);
 
   return (
     <div className="altar" class="container-sm">
@@ -67,8 +78,7 @@ function Altar() {
         <div
           id="myCarousel"
           className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="2000" // Set interval to 2 seconds (2000ms)
+          ref={carouselRef} // Attach the ref to the carousel element
         >
           {/* Indicators */}
           <ol className="carousel-indicators">

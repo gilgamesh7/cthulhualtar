@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+/* App.css or styles.css */
+.carousel-inner img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 600px; /* Limit the height of the image */
+  object-fit: contain; /* Ensure the image is scaled without being cropped */
+  margin: 0 auto; /* Center the images */
+  display: block; /* Fixes alignment issues */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +44,5 @@
   to {
     transform: rotate(360deg);
   }
+
 }
