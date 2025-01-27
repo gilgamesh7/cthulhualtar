@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+/* Explicitly hide the slide-to numbers */
+.carousel-indicators li {
+  display: none;
+}
+
+
 /* App.css or styles.css */
 .carousel-inner img {
   max-width: 100%; /* Make the image responsive */

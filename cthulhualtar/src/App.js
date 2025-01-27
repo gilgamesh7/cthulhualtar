@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import cthulhuImage1 from './images/cthulhu.jpeg';
 import cthulhuImage2 from './images/cthulhu-2.jpg';
-import cthulhuImage3 from './images/cthulhu-3.jpg';
+import cthulhuImage3 from './images/cthulhu-6.png.webp';
+import cthulhuImage4 from './images/cthulhu-5.jpg.webp';
+import cthulhuImage5 from './images/cthulhu-3.jpeg';
 
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
@@ -62,7 +64,7 @@ function Altar() {
     if (carouselRef.current) {
       const bootstrap = require('bootstrap'); // Import Bootstrap dynamically
       new bootstrap.Carousel(carouselRef.current, {
-        interval: 2000, // Set the interval to 2 seconds
+        interval: 3000, // Set the interval to 3 seconds
         ride: 'carousel', // Automatically start the carousel
       });
     }
@@ -70,11 +72,14 @@ function Altar() {
 
   return (
     <div className="altar" class="container-sm">
-      <h1>{rlyeh_location}</h1>
-      <h2>{awakeningTime}</h2>
+      <div class="d-flex justify-content-center mt-4">
+      <div class="bg-warning text-dark p-3 shadow-sm rounded text-center">
+          {awakeningTime}
+        </div>
+      </div>
 
       <div className="container mt-5">
-        <h1 className="text-center mb-4">Mythos Carousel</h1>
+        <h1 className="text-center mb-4">{rlyeh_location}</h1>
         <div
           id="myCarousel"
           className="carousel slide"
@@ -85,6 +90,8 @@ function Altar() {
             <li data-bs-target="#myCarousel" data-bs-slide-to="0" className="active"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
           </ol>
 
           {/* Carousel Items */}
@@ -97,17 +104,31 @@ function Altar() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src={cthulhuImage2} className="d-block w-100" alt="Dagon" />
+              <img src={cthulhuImage2} className="d-block w-100" alt="Cthulhu" />
               <div className="carousel-caption">
                 <h5>Cthulhu</h5>
                 <p>In his house at R'lyeh, dead Cthulhu lies dreaming</p>
               </div>
             </div>
             <div className="carousel-item">
-              <img src={cthulhuImage3} className="d-block w-100" alt="Nyarlathotep" />
+              <img src={cthulhuImage3} className="d-block w-100" alt="Cthulhu" />
               <div className="carousel-caption">
                 <h5>Cthulhu</h5>
                 <p>That is not dead which can eternal lie, And with strange aeons even death may die.</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={cthulhuImage4} className="d-block w-100" alt="Cthulhu" />
+              <div className="carousel-caption">
+                <h5>Cthulhu</h5>
+                <p>The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents.</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={cthulhuImage5} className="d-block w-100" alt="Cthulhu" />
+              <div className="carousel-caption">
+                <h5>Cthulhu</h5>
+                <p>A mountain walked or stumbled.</p>
               </div>
             </div>
           </div>
