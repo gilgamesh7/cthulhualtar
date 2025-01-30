@@ -64,7 +64,7 @@ function Altar() {
     if (carouselRef.current) {
       const bootstrap = require('bootstrap'); // Import Bootstrap dynamically
       new bootstrap.Carousel(carouselRef.current, {
-        interval: 3000, // Set the interval to 3 seconds
+        interval: 6000, // Set the interval to 6 seconds
         ride: 'carousel', // Automatically start the carousel
       });
     }
