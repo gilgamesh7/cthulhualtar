@@ -81,7 +81,16 @@ function Altar() {
     <div class="container text-center">
       <div class="row align-items-start">
         <div class="col-2">
-          <br></br><br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <h3> The Covenant of the Abyssal Harbinger</h3>
+          <br></br>
+          <br></br>
           Carlos Danger <br></br>
           Santiago Hernandez <br></br>
           Bernard O'Leary <br></br>
@@ -154,10 +163,29 @@ function Altar() {
             </div>
           </div>
       </div>
-      <div class="col-2">
-        <br></br><br></br>ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn
+
+      <div class="col-3">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h3> This is the invocation for your supplication</h3>
+        <br></br>
+      <iframe 
+        width="100%" 
+        height="150" 
+        src="https://www.youtube.com/embed/zu-akdyxpUc?rel=0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
       </div>
       </div>
+
       </div>  
       <p className="mt-3"></p>
       <p className="mt-1"></p>
