@@ -80,7 +80,7 @@ function Altar() {
 
     <div class="container text-center">
       <div class="row align-items-start">
-        <div class="col">
+        <div class="col-2">
           <br></br><br></br>
           Carlos Danger <br></br>
           Santiago Hernandez <br></br>
@@ -154,7 +154,7 @@ function Altar() {
             </div>
           </div>
       </div>
-      <div class="col">
+      <div class="col-2">
         <br></br><br></br>ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn
       </div>
       </div>
