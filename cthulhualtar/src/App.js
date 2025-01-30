@@ -78,72 +78,87 @@ function Altar() {
         </div>
       </div>
 
-      <div className="container mt-5">
-        <h1 className="text-center mb-4">{rlyeh_location}</h1>
-        <div
-          id="myCarousel"
-          className="carousel slide"
-          ref={carouselRef} // Attach the ref to the carousel element
-        >
-          {/* Indicators */}
-          <ol className="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" className="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
-          </ol>
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+          <br></br><br></br>
+          Carlos Danger <br></br>
+          Santiago Hernandez <br></br>
+          Bernard O'Leary <br></br>
+        </div>
+        <div class="col">
+          <div className="container mt-5">
+            <h1 className="text-center mb-4">{rlyeh_location}</h1>
+            <div
+              id="myCarousel"
+              className="carousel slide"
+              ref={carouselRef} // Attach the ref to the carousel element
+            >
+              {/* Indicators */}
+              <ol className="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" className="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+              </ol>
 
-          {/* Carousel Items */}
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src={cthulhuImage1} className="d-block w-100" alt="Cthulhu" />
-              <div className="carousel-caption">
-                <h5>Cthulhu</h5>
-                <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
+              {/* Carousel Items */}
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src={cthulhuImage1} className="d-block w-100" alt="Cthulhu" />
+                  <div className="carousel-caption">
+                    <h5>Cthulhu</h5>
+                    <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={cthulhuImage2} className="d-block w-100" alt="Cthulhu" />
+                  <div className="carousel-caption">
+                    <h5>Cthulhu</h5>
+                    <p>In his house at R'lyeh, dead Cthulhu lies dreaming</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={cthulhuImage3} className="d-block w-100" alt="Cthulhu" />
+                  <div className="carousel-caption">
+                    <h5>Cthulhu</h5>
+                    <p>That is not dead which can eternal lie, And with strange aeons even death may die.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={cthulhuImage4} className="d-block w-100" alt="Cthulhu" />
+                  <div className="carousel-caption">
+                    <h5>Cthulhu</h5>
+                    <p>The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={cthulhuImage5} className="d-block w-100" alt="Cthulhu" />
+                  <div className="carousel-caption">
+                    <h5>Cthulhu</h5>
+                    <p>A mountain walked or stumbled.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="carousel-item">
-              <img src={cthulhuImage2} className="d-block w-100" alt="Cthulhu" />
-              <div className="carousel-caption">
-                <h5>Cthulhu</h5>
-                <p>In his house at R'lyeh, dead Cthulhu lies dreaming</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src={cthulhuImage3} className="d-block w-100" alt="Cthulhu" />
-              <div className="carousel-caption">
-                <h5>Cthulhu</h5>
-                <p>That is not dead which can eternal lie, And with strange aeons even death may die.</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src={cthulhuImage4} className="d-block w-100" alt="Cthulhu" />
-              <div className="carousel-caption">
-                <h5>Cthulhu</h5>
-                <p>The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents.</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src={cthulhuImage5} className="d-block w-100" alt="Cthulhu" />
-              <div className="carousel-caption">
-                <h5>Cthulhu</h5>
-                <p>A mountain walked or stumbled.</p>
-              </div>
+
+              {/* Navigation */}
+              <a className="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </a>
             </div>
           </div>
-
-          {/* Navigation */}
-          <a className="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </a>
-          <a className="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </a>
-        </div>
       </div>
+      <div class="col">
+        <br></br><br></br>ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn
+      </div>
+      </div>
+      </div>  
       <p className="mt-3"></p>
       <p className="mt-1"></p>
     </div>
