@@ -13,6 +13,7 @@ import cthulhuImage5 from './images/cthulhu-3.jpeg';
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
+
   const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
   const carouselRef = useRef(null); // Ref for carousel element
 
@@ -94,6 +95,13 @@ function Altar() {
           Carlos Danger <br></br>
           Santiago Hernandez <br></br>
           Bernard O'Leary <br></br>
+          Minotaur <br></br>
+          <br></br>
+          <br></br>
+          <h3> Specters of the Broken Covenant of the Abyss </h3>
+          <br></br>
+          <br></br>
+          Rajesh Babu <br></br>
         </div>
         <div class="col">
           <div className="container mt-5">
@@ -183,6 +191,13 @@ function Altar() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
+      <div>
+      <br></br>
+          <h3> Portents of Cosmic Tempests </h3>
+          <br></br>
+          In the cursed light of 06:36 AM, the spectral sun awakens over eldritch R'lyeh, only to retreat by 08:32 PM into grim twilight. At 09:10 AM, a feeble, 5%-lit waxing crescent ascends, casting eerie omens, and by 10:12 PM, it sinks into abysmal shadow. Both celestial orbs—unyielding in their otherworldly vigil—portend unspeakable horrors, as the heavens murmur of ancient, slumbering entities. R'lyeh waits, shrouded in malignant starlight, for the coming alignment that shall herald eldritch calamity.
+          <br></br>
+      </div>
       </div>
       </div>
 
