@@ -91,7 +91,6 @@ function Altar() {
           <br></br>
           <h3> The Covenant of the Abyssal Harbinger</h3>
           <br></br>
-          <br></br>
           Carlos Danger <br></br>
           Santiago Hernandez <br></br>
           Bernard O'Leary <br></br>
@@ -99,10 +98,9 @@ function Altar() {
           Roger Federer <br></br>
           Dirk Diggler <br></br>
           Michael Hunt <br></br>
-          <br></br>
+          Baba Yaga <br></br>
           <br></br>
           <h3> Specters of the Broken Covenant of the Abyss </h3>
-          <br></br>
           <br></br>
           Rajesh Babu <br></br>
         </div>
