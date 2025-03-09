@@ -13,9 +13,12 @@ import cthulhuImage5 from './images/cthulhu-3.jpeg';
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
+  const [weatherMessage, setWeatherMessage] = useState(""); // State to store API response
 
   const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
   const carouselRef = useRef(null); // Ref for carousel element
+
+
 
   useEffect(() => {
 
@@ -34,6 +37,11 @@ function Altar() {
 
         const awakeningTime = calculate_time_to_awaken();
         setAwakeningTime(awakeningTime);
+
+        fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
+        .then(response => response.json())
+        .then(data => setWeatherMessage(data.weatherMessage)) // Assign API response to state
+        .catch(error => console.error("Error:", error));
 
         // Generate a random interval between 1 and 6 seconds
         const nextInterval = Math.floor(Math.random() * 6 + 1) * 1000; // Random time between 1 and 6 seconds
@@ -70,6 +78,8 @@ function Altar() {
       });
     }
   }, []);
+
+
 
   return (
     <div className="altar" class="container-sm">
@@ -181,7 +191,7 @@ function Altar() {
         <br></br>
         <br></br>
         <br></br>
-        <h3> This is the invocation for your supplication</h3>
+        <h3> Invocation </h3>
         <br></br>
       <iframe 
         width="100%" 
@@ -196,7 +206,7 @@ function Altar() {
       <br></br>
           <h3> Portents of Cosmic Tempests </h3>
           <br></br>
-          In the cursed light of 06:36 AM, the spectral sun awakens over eldritch R'lyeh, only to retreat by 08:32 PM into grim twilight. At 09:10 AM, a feeble, 5%-lit waxing crescent ascends, casting eerie omens, and by 10:12 PM, it sinks into abysmal shadow. 
+          {weatherMessage ? weatherMessage : "Loading..."}
           <br></br>
       </div>
       </div>
