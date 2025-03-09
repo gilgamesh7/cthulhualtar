@@ -42,7 +42,8 @@ function Altar() {
         .then(response => response.json())
         .then(data => setWeatherMessage(data.weatherMessage)) // Assign API response to state
         .catch(error => console.error("Error:", error));
-
+        console.log("Weather message: ", weatherMessage);
+        
         // Generate a random interval between 1 and 6 seconds
         const nextInterval = Math.floor(Math.random() * 6 + 1) * 1000; // Random time between 1 and 6 seconds
 
