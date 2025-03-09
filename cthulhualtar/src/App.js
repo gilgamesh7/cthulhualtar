@@ -40,10 +40,13 @@ function Altar() {
 
         fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
         .then(response => response.json())
-        .then(data => setWeatherMessage(data.weatherMessage)) // Assign API response to state
+        .then(data => {
+          setWeatherMessage(data.weatherMessage) // Assign API response to state
+          console.log("Weather message: ", data.weatherMessage);
+        })
         .catch(error => console.error("Error:", error));
-        console.log("Weather message: ", weatherMessage);
         
+
         // Generate a random interval between 1 and 6 seconds
         const nextInterval = Math.floor(Math.random() * 6 + 1) * 1000; // Random time between 1 and 6 seconds
 
