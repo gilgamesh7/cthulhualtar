@@ -41,8 +41,8 @@ function Altar() {
         fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
         .then(response => response.json())
         .then(data => {
-          setWeatherMessage(data.weatherMessage) // Assign API response to state
-          console.log("Weather message: ", data.weatherMessage);
+          setWeatherMessage(data.message) // Assign API response to state
+          console.log("Weather message: ", data.message);
         })
         .catch(error => console.error("Error:", error));
         
