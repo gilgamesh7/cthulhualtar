@@ -18,11 +18,11 @@ function Altar() {
   const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
   const carouselRef = useRef(null); // Ref for carousel element
 
-
-
   useEffect(() => {
 
     let active = true; // Track if the component is still mounted
+
+    localStorage.removeItem("lastWeatherUpdateTime"); // Clear weather update time on component mount
 
     const loadWASM = async () => {
       await init();
@@ -38,13 +38,25 @@ function Altar() {
         const awakeningTime = calculate_time_to_awaken();
         setAwakeningTime(awakeningTime);
 
-        fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
-        .then(response => response.json())
-        .then(data => {
-          setWeatherMessage(data.message) // Assign API response to state
-          console.log("Weather message: ", data.message);
-        })
-        .catch(error => console.error("Error:", error));
+        // Fetch weather data from the API
+        const lastWeatherUpdateTime = localStorage.getItem('lastWeatherUpdateTime');
+        const currentTime = Date.now();
+
+        // If 12 hours (43,200,000 ms) have passed since the last fetch, make the API call
+        if (!lastWeatherUpdateTime || currentTime - lastWeatherUpdateTime > ( 12 * 60 * 60 * 1000)) {
+          fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
+          .then(response => response.json())
+          .then(data => {
+            setWeatherMessage(data.message) // Assign API response to state
+            console.log("Weather message : ", data.message);
+            console.log("Current time : ", currentTime);
+            localStorage.setItem("lastWeatherUpdateTime", currentTime.toString()); // Save timestamp
+            console.log("Last weather update time : ", lastWeatherUpdateTime);
+          })
+          .catch(error => console.error("Error:", error));
+        } else {
+          console.log("Time remaining for next weather update : ", ( 12 * 60 * 60 * 1000) - (currentTime - lastWeatherUpdateTime));
+        }
         
 
         // Generate a random interval between 1 and 6 seconds
