@@ -44,11 +44,12 @@ function Altar() {
 
         // If 12 hours (43,200,000 ms) have passed since the last fetch, make the API call
         if (!lastWeatherUpdateTime || currentTime - lastWeatherUpdateTime > ( 12 * 60 * 60 * 1000)) {
-          fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/alive')
+          fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/astroprediction')
           .then(response => response.json())
           .then(data => {
-            setWeatherMessage(data.message) // Assign API response to state
-            console.log("Weather message : ", data.message);
+            console.log("Data:", data);
+            setWeatherMessage(data.content) // Assign API response to state
+            console.log("Weather message : ", data.content);
             console.log("Current time : ", currentTime);
             localStorage.setItem("lastWeatherUpdateTime", currentTime.toString()); // Save timestamp
             console.log("Last weather update time : ", lastWeatherUpdateTime);
