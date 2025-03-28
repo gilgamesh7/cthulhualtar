@@ -42,8 +42,8 @@ function Altar() {
         const lastWeatherUpdateTime = localStorage.getItem('lastWeatherUpdateTime');
         const currentTime = Date.now();
 
-        // If 12 hours (43,200,000 ms) have passed since the last fetch, make the API call
-        if (!lastWeatherUpdateTime || currentTime - lastWeatherUpdateTime > ( 12 * 60 * 60 * 1000)) {
+        // If 24 hours have passed since the last fetch, make the API call
+        if (!lastWeatherUpdateTime || currentTime - lastWeatherUpdateTime > ( 24 * 60 * 60 * 1000)) {
           fetch('https://cthulhualtar-api-begvgzh8guerb3ba.centralus-01.azurewebsites.net/api/v1/astroprediction')
           .then(response => response.json())
           .then(data => {
