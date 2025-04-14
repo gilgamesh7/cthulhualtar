@@ -210,15 +210,16 @@ function Altar() {
         <br></br>
         <h3> Invocation </h3>
         <br></br>
-      <iframe 
-        width="100%" 
-        height="150" 
-        src="https://www.youtube.com/embed/zu-akdyxpUc?rel=0" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+        <iframe 
+          width="100%" 
+          height="150" 
+          src="https://www.youtube.com/embed/zu-akdyxpUc?rel=0&modestbranding=1&controls=1&disablekb=1" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        >
+        </iframe>
+
       <div>
       <br></br>
           <h3> Portents of Cosmic Tempests </h3>
