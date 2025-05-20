@@ -13,8 +13,11 @@ pub fn get_rlyeh_location() -> String {
 
 #[wasm_bindgen]
 pub fn calculate_time_to_awaken() -> String {
+    // let great_awakening_time = Utc
+    // .with_ymd_and_hms(2025, 3, 25, 6, 6, 6)
+    // .unwrap();
     let great_awakening_time = Utc
-    .with_ymd_and_hms(2025, 3, 25, 6, 6, 6)
+    .with_ymd_and_hms(2025, 7, 25, 6, 6, 6)
     .unwrap();
 
     let now = Utc::now();
