@@ -13,11 +13,11 @@ import cthulhuImage5 from './images/cthulhu-3.jpeg';
 function Altar() {
   const [rlyeh_location, setRlyehLocation] = useState([]);
   const [awakeningTime, setAwakeningTime] = useState([]);
-  const [weatherMessage, setWeatherMessage] = useState(""); // State to store API response
+  const [weatherMessage, setWeatherMessage] = useState(''); // State to store API response
 
   const timerRef = useRef(null); // Use ref instead of state for timer ID to avoid triggering eslint error "React Hook useEffect has a missing dependency"
   const carouselRef = useRef(null); // Ref for carousel element
-
+  
   useEffect(() => {
 
     let active = true; // Track if the component is still mounted
@@ -52,7 +52,7 @@ function Altar() {
             console.log("Weather message : ", data.content);
             console.log("Current time : ", currentTime);
             localStorage.setItem("lastWeatherUpdateTime", currentTime.toString()); // Save timestamp
-            console.log("Last weather update time : ", lastWeatherUpdateTime);
+            console.log("Last weather update time : ", localStorage.getItem('lastWeatherUpdateTime'));
           })
           .catch(error => console.error("Error:", error));
         } else {
